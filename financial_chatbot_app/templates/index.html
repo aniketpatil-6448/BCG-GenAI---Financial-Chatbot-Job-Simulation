@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Financial Chatbot</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #1d2b64, #f8cdda);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-size: cover;
+        }
+        .chat-box {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            max-width: 600px;
+            width: 100%;
+            border-radius: 16px;
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+        }
+        h2 {
+            text-align: center;
+            color: #1d2b64;
+        }
+        label {
+            font-weight: 600;
+            color: #333;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            background-color: #1d2b64;
+            color: white;
+            padding: 12px 25px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: #16204f;
+        }
+        .response {
+            margin-top: 20px;
+            background: #e9f5ff;
+            padding: 15px;
+            border-left: 6px solid #1d2b64;
+            border-radius: 10px;
+            color: #333;
+        }
+        @media (max-width: 600px) {
+            .chat-box {
+                margin: 20px;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-box">
+        <h2>💬 Financial Chatbot</h2>
+        <form method="post">
+            <label for="query">Ask a question:</label>
+            <input type="text" id="query" name="query" required placeholder="e.g. What is the total revenue of Microsoft in 2023?">
+            <input type="submit" value="Ask">
+        </form>
+        {% if response %}
+        <div class="response"><strong>Bot:</strong> {{ response }}</div>
+        {% endif %}
+    </div>
+</body>
+</html>
